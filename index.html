@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harshita | BSc IT Student & Aspiring Developer</title>
+<meta name="description" content="Harshita is a BSc IT student learning to build things for the web.">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Apply saved or system theme before the page paints
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (!theme) {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <strong>Harshita</strong>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" type="button" aria-label="Switch between light and dark mode">Dark mode</button>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <p class="code">console.log("Hello, world!");</p>
+    <h1>Hi, I'm Harshita.</h1>
+    <p class="lead">I'm a BSc IT student who loves building things with code. I'm learning web development one project at a time, and this is my first live page.</p>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <p>I'm studying Information Technology for my BSc. What I enjoy most is developing: taking an idea, writing the code, and seeing it work on screen. I'm building my skills step by step, and I want to become a confident developer who creates useful things for the web.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>What I'm learning</h2>
+    <ul class="skills">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Git and GitHub</li>
+      <li>Problem solving</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>My first web page</h3>
+        <p>The page you're on right now. Built with AI help, saved on GitHub, and deployed live on Vercel.</p>
+      </div>
+      <div class="project">
+        <h3>Next up: a to-do app</h3>
+        <p>A small JavaScript app to practice buttons, lists, and saving data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Want to say hi or share a project idea? Email me at <a class="email" href="mailto:waghmareharshita5@gmail.com">waghmareharshita5@gmail.com</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; 2026 Harshita. Built with HTML, CSS, and a little JavaScript.</div>
+</footer>
+
+<script>
+  var root = document.documentElement;
+  var button = document.getElementById("theme-toggle");
+
+  function updateLabel() {
+    button.textContent = root.getAttribute("data-theme") === "dark" ? "Light mode" : "Dark mode";
+  }
+
+  button.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    updateLabel();
+  });
+
+  updateLabel();
+</script>
+
+</body>
+</html>
